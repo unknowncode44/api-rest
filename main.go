@@ -4,10 +4,12 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/unknowncode44/api-rest/internal/db"
 	"github.com/unknowncode44/api-rest/internal/routes"
 )
 
 func main() {
+	db.InitDbService()
 	router := routes.NewRouter()
 	port := 3044
 	addr := fmt.Sprintf(":%d", port)
