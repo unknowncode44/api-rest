@@ -8,8 +8,8 @@ import (
 
 type Role struct {
 	gorm.Model
-	ID   int `grom:"autoGenerate"`
-	Type UserRole
+	ID   int      `gorm:"autoGenerate"`
+	Type UserRole `gorm:"not null; uniqueIndex"`
 }
 
 // Definimos el tipo personalizado "RolUsuario" como un alias de string

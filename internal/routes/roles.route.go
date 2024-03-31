@@ -10,7 +10,11 @@ import (
 )
 
 func GetAllRoles(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("get all roles"))
+	var roles []models.Role
+
+	db.DBE.Find(&roles)
+
+	json.NewEncoder(w).Encode(&roles)
 }
 
 func PostOneRole(w http.ResponseWriter, r *http.Request) {
